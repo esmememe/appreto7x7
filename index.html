@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#4c684b">
 <meta name="description" content="Tu capitán te acompaña a crear hábitos: Reto 7x7, diario y rangos.">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="icons/icon-192.png">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>Mi Capitán</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,8 +45,8 @@ p{margin:0}
 .muted{color:var(--muted)}
 
 /* Escenario */
-.stage{position:relative;height:clamp(320px,50vh,480px);background:url("img/cuartel.webp") center 62%/cover no-repeat;overflow:hidden}
-.stage.ceremony{background-image:url("img/ceremonia.webp")}
+.stage{position:relative;height:clamp(320px,50vh,480px);background:url("cuartel.webp") center 62%/cover no-repeat;overflow:hidden}
+.stage.ceremony{background-image:url("ceremonia.webp")}
 .stage .cap{position:absolute;bottom:-4px;left:4%;height:88%;width:auto;max-width:none;filter:drop-shadow(0 10px 14px rgba(60,40,10,.25));animation:rise .5s ease-out both}
 @keyframes rise{from{transform:translateY(14px);opacity:.0}to{transform:none;opacity:1}}
 .bubble{position:absolute;right:max(14px,env(safe-area-inset-right,0px));top:74px;width:min(56%,230px);background:var(--paper);border:1px solid var(--line);border-radius:18px 18px 18px 4px;padding:12px 14px;font-size:15px;line-height:1.35;box-shadow:0 8px 20px rgba(60,50,20,.14);animation:pop .4s .15s ease-out both}
@@ -177,8 +177,8 @@ details.entry .q{font-size:13px;color:var(--muted);margin-top:10px}
 .ov{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;background:rgba(30,36,24,.55);animation:fade .25s ease both}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 .ov-in{position:relative;width:min(480px,100%);max-height:100%;overflow:auto;background:var(--ivory);border-radius:26px 26px 0 0;padding-bottom:calc(20px + env(safe-area-inset-bottom,0px))}
-.ov-stage{position:relative;height:clamp(300px,52vh,460px);background:url("img/cuartel.webp") center 62%/cover;border-radius:26px 26px 0 0;overflow:hidden}
-.ov-stage.ceremony{background-image:url("img/ceremonia.webp");background-position:center 70%}
+.ov-stage{position:relative;height:clamp(300px,52vh,460px);background:url("cuartel.webp") center 62%/cover;border-radius:26px 26px 0 0;overflow:hidden}
+.ov-stage.ceremony{background-image:url("ceremonia.webp");background-position:center 70%}
 .ov-stage img{position:absolute;bottom:-4px;left:0;right:0;margin-inline:auto;height:94%;width:auto;max-width:none;filter:drop-shadow(0 10px 14px rgba(60,40,10,.3));animation:rise .5s ease-out both}
 .ov-body{display:flex;flex-direction:column;gap:12px;padding-block:20px 4px;text-align:center}
 .ov-body h1{font-size:32px}
@@ -305,7 +305,7 @@ function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){retur
 function fdate(k){var p=k.split("-");var d=new Date(+p[0],+p[1]-1,+p[2]);return d.toLocaleDateString("es-MX",{weekday:"long",day:"numeric",month:"long"});}
 function g(f,m){return S&&S.trato==="m"?m:f;}
 function capName(){return S.captain==="capitan"?"Capitán":"Capitana";}
-function img(pose,c){return "img/"+(c||S.captain)+"-"+pose+".webp";}
+function img(pose,c){return ""+(c||S.captain)+"-"+pose+".webp";}
 function rankName(i){return i===6?g("Capitana","Capitán"):RANKS[i].n;}
 function saludo(){var h=new Date().getHours();return h<12?"Buenos días":h<19?"Buenas tardes":"Buenas noches";}
 

@@ -1,7 +1,7 @@
 const CACHE = "micapitan-v1";
-const FILES = ["./","index.html","manifest.webmanifest","icons/icon-192.png","icons/icon-512.png",
-  "img/cuartel.webp","img/ceremonia.webp"].concat(
-  ["capitan","capitana"].flatMap(c=>["bienvenida","mision","diario","felicitacion","animo","ascenso"].map(p=>`img/${c}-${p}.webp`)));
+const FILES = ["./","index.html","manifest.webmanifest","icon-192.png","icon-512.png",
+  "cuartel.webp","ceremonia.webp"].concat(
+  ["capitan","capitana"].flatMap(c=>["bienvenida","mision","diario","felicitacion","animo","ascenso"].map(p=>`${c}-${p}.webp`)));
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES))); self.skipWaiting(); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k))))); self.clients.claim(); });
 self.addEventListener("fetch", e => {
