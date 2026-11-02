@@ -1,0 +1,17 @@
+{
+  "name": "Mi Capitán",
+  "short_name": "Mi Capitán",
+  "description": "Tu capitán te acompaña a crear hábitos: Reto 7x7, diario y rangos.",
+  "lang": "es-MX",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f6f1e4",
+  "theme_color": "#4c684b",
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
